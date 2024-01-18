@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 1</title>
+    <style>
+        .form {
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="App" style="width: 50px;">
+            <label>X</label>
+            <input placeholder="ingresa coordenada x" type="number">
+            <label>Y</label>
+            <input placeholder="ingresa coordenada en y" type="number">
+            <label>Tiempo</label>
+            <input placeholder="ingresa tiempo en segundos" type="number">
+            <label>Casillas</label>
+            <input placeholder="ingresa la cantidad a llenar" type="number">
+            <input type="button" value="Enviar formulario" onclick="Enviar()" />
+
+        </div>
+    </form>
+    <table>
+        <tr></tr>
+        <td></td>
+    </table>
+    <script>
+        function Enviar() {
+            var simbolos, color;
+            var body = document.getElementsByTagName("body")[0];
+            var tabla = document.createElement("table");
+            var tBody = document.createElement("tbody");
+
+            for (var j = 0; j < 2; i++) {
+                var hilera = document.createElement("tr");
+
+                simbolos = "0123456789ABCDEF";
+                color = "#";
+                for (var j = 0; j < 3; j++) {
+                    var celda = document.createElement("td")
+                    color = color + simbolos[Math.floor(Math.random() * 16)]
+                };
+                document.table.style.background = color;
+
+                celda.appendChild(color)
+                hilera.appendChild(celda)
+
+                tBody.appendChild(hilera);
+                tabla.appendChild(tBody);
+                body.appendChild(tabla);
+                tabla.setAttribute("border", "3")
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
